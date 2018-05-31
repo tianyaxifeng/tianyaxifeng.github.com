@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>天涯·西风</title>
+  
+  <subtitle>古道西风瘦马，夕阳西下，断肠人在天涯!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-12-16T03:34:13.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Tianyaxifeng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/12/16/hello-world/"/>
+    <id>http://yoursite.com/2016/12/16/hello-world/</id>
+    <published>2016-12-16T03:34:13.000Z</published>
+    <updated>2016-12-16T03:34:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;http://hexo.io
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>php函数call_user_fun</title>
+    <link href="http://yoursite.com/2016/06/07/call-user-fun/"/>
+    <id>http://yoursite.com/2016/06/07/call-user-fun/</id>
+    <published>2016-06-07T15:00:29.000Z</published>
+    <updated>2016-12-16T03:34:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于php函数-call-user-fun"><a href="#关于php函数-call-user-fun" class="headerlink" title="关于php函数 :call_user_fun()"></a>关于php函数 :call_user_fun()</h2><blockquote><p>看到好多地方使用call_user_fun(),一直没有使用过。<br>查询官网以及相关资料了解，以此记之。（示例来源<a href="http://php.net/manual/zh/function.call-user-func.php" target="_blank" rel="noopener">php官网</a>）</p></blockquote><p>此函数为php内置函数，允许用户调用回调函数，并将参数传入</p><ul><li><p>语法</p><p>  mixed call_user_func ( callable $callback [, mixed $parameter [, mixed $… ]] )</p></li></ul><p>第一个参数 callback 是被调用的回调函数，其余参数是回调函数的参数</p><ul><li>注意</li></ul><p>传入call_user_func()的参数不能为引用传递。 </p><ul><li>返回值</li></ul><p>返回回调函数的返回值，如果错误则返回FALSE</p><pre><code>示例：&lt;?phpfunction barber($type){    echo &quot;You wanted a $type haircut, no problem\n&quot;;}call_user_func(&apos;barber&apos;, &quot;mushroom&quot;);call_user_func(&apos;barber&apos;, &quot;shave&quot;);?&gt;</code></pre><h2 id="相关函数-call-user-fun-array"><a href="#相关函数-call-user-fun-array" class="headerlink" title="相关函数 call_user_fun_array()"></a>相关函数 call_user_fun_array()</h2><p>功能和call_user_fun()类似，调用回调函数，并把一个#数组#参数作为回调函数的参数</p><p>注意数组得是索引数组，结果出错则返回false</p><pre><code>示例：&lt;?phpfunction foobar($arg, $arg2) {    echo __FUNCTION__, &quot; got $arg and $arg2\n&quot;;}class foo {    function bar($arg, $arg2) {        echo __METHOD__, &quot; got $arg and $arg2\n&quot;;    }}// Call the foobar() function with 2 argumentscall_user_func_array(&quot;foobar&quot;, array(&quot;one&quot;, &quot;two&quot;));// Call the $foo-&gt;bar() method with 2 arguments$foo = new foo;call_user_func_array(array($foo, &quot;bar&quot;), array(&quot;three&quot;, &quot;four&quot;));?&gt;</code></pre><h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>在函数中注册有多个回调内容时(如使用 call_user_func() 与 call_user_func_array())，如在前一个回调中有未捕获的异常，其后的将不再被调用。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;关于php函数-call-user-fun&quot;&gt;&lt;a href=&quot;#关于php函数-call-user-fun&quot; class=&quot;headerlink&quot; title=&quot;关于php函数 :call_user_fun()&quot;&gt;&lt;/a&gt;关于php函数 :call_user_f
+      
+    
+    </summary>
+    
+      <category term="php" scheme="http://yoursite.com/categories/php/"/>
+    
+    
+      <category term="php基础" scheme="http://yoursite.com/tags/php%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="php函数" scheme="http://yoursite.com/tags/php%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于本站</title>
+    <link href="http://yoursite.com/2016/06/05/first-page/"/>
+    <id>http://yoursite.com/2016/06/05/first-page/</id>
+    <published>2016-06-05T15:59:22.000Z</published>
+    <updated>2016-12-16T03:34:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h2><p>本站采用 <code>hexo</code>框架 + <code>next</code>主题搭建.</p><h2 id="相关网站"><a href="#相关网站" class="headerlink" title="相关网站"></a>相关网站</h2><p>本站的搭建主要参考了以下资料：</p><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官网</a></p><p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next官网</a></p><p>以及其他一些文章，在此一并感谢，恕不一一列举.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;关于本站&quot;&gt;&lt;a href=&quot;#关于本站&quot; class=&quot;headerlink&quot; title=&quot;关于本站&quot;&gt;&lt;/a&gt;关于本站&lt;/h2&gt;&lt;p&gt;本站采用 &lt;code&gt;hexo&lt;/code&gt;框架 + &lt;code&gt;next&lt;/code&gt;主题搭建.&lt;/p&gt;
+&lt;h2 id=&quot;
+      
+    
+    </summary>
+    
+      <category term="description" scheme="http://yoursite.com/categories/description/"/>
+    
+    
+      <category term="about" scheme="http://yoursite.com/tags/about/"/>
+    
+  </entry>
+  
+</feed>
